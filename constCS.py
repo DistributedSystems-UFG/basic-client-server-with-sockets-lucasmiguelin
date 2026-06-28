@@ -1,2 +1,3 @@
-HOST = '172.31.35.200'
+# constCS.py
+HOST = '127.0.0.1' # Usando localhost para testes locais
 PORT = 5678
