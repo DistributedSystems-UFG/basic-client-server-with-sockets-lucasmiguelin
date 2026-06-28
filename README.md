@@ -1,10 +1,23 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/7EVNAYx2)
-# ClientServerBasics (2.0)
-Starter code for the basic client-server assignment
+# Client-Server Basics (2.0) - Calculadora Remota
 
+Este projeto é uma atividade prática da disciplina de Sistemas Distribuídos que implementa uma arquitetura Cliente-Servidor utilizando a biblioteca `socket` do Python. O projeto original (Fig 2.3 do livro-texto) foi expandido para atuar como uma **Calculadora Remota**.
 
-Este template corresponde ao exemplo da Fig. 2.3 do livro. O exercício consiste em acrescentar funcionalidade ao servidor para torná-lo mais útil. Essa funcionalidade deve ser acessível aos clientes. Por exemplo, o servidor pode ser uma espécie de calculadora remota. O cliente passa dois valores numéricos, juntamente com o nome de uma operação (ex.: add, subtract, multiply, divide) e o servidor executa a operação respectiva e retorna seu resultado para o cliente. Você pode implementar um servidor com outras funcionalidades (diferente da calculadora). O imporante é que ele ofereça pelo menos três operações diferentes que os clientes podem utilizar remotamente, passando dados para serem processados e recebendo o resultado desse processamento como resposta.
+## Funcionalidades Implementadas
 
-Tarefa individual.
+A complexidade do processamento no servidor foi aumentada. Ele não apenas ecoa mensagens, mas atua processando operações matemáticas enviadas pelo cliente. 
 
-Incluir um Readme descritivo do sistema implementado.
+O cliente pode invocar de forma contínua as seguintes funcionalidades (operações) no servidor em uma única requisição/sessão:
+- `add` (Adição)
+- `subtract` (Subtração)
+- `multiply` (Multiplicação)
+- `divide` (Divisão com tratamento para divisão por zero)
+
+O servidor também possui tratamento de exceções para pacotes mal formatados ou uso de strings onde deveriam ser valores numéricos.
+
+## Como executar
+
+1. Certifique-se de ter o Python 3 instalado em sua máquina.
+2. Os três arquivos (`server.py`, `client.py` e `constCS.py`) devem estar no mesmo diretório.
+3. Abra um terminal e inicie o servidor primeiro:
+   ```bash
+   python server.py
